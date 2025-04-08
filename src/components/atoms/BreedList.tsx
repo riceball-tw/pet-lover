@@ -35,13 +35,15 @@ export default function BreedList({ breeds }: { breeds: BreedListProps }) {
             return (
               <li className={subBreedClass} key={`${breed}${subBreed}`}>
                 <Link className="flex items-center gap-4 px-5 py-2.5" href={breedPath}>
-                  <Image
-                    width="60"
-                    height="60"
-                    className="aspect-square bg-global-image-fallback rounded-full"
-                    src={image || ""}
-                    alt={subBreed ? subBreed : breed}
-                  />
+                  {image && (
+                    <Image
+                      width="60"
+                      height="60"
+                      className="aspect-square bg-global-image-fallback rounded-full"
+                      src={image}
+                      alt={subBreed ? subBreed : breed}
+                    />
+                  )}
                   <h2>{subBreed ? subBreed : breed}</h2>
                 </Link>
               </li>
