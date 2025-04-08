@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Query): Promise<Metadata> {
-  const breedName = await params.breedName
+  const { breedName } = await params
   const title = Array.isArray(breedName) ? breedName.join('/') : breedName;
   return {
     title,
