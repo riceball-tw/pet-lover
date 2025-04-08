@@ -20,6 +20,9 @@
 
   /* Global Divider */
   --global-divider: #C4C4C4;
+
+  /* Global Dialog */
+  --global-dialog-foreground: #ffffff;
 }
 
 @theme inline {
@@ -42,4 +45,6 @@
   /* Global Divider */
   --color-global-divider: var(--global-divider);
 
+  /* Global Dialog */
+  --color-global-dialog-foreground: var(--global-dialog-foreground)
 }
