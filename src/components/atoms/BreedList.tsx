@@ -1,21 +1,19 @@
 'use client'
-
 import type { FlattenedBreed } from '@/type/breeds'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useMemo } from 'react'
+import { useMemo, Suspense } from 'react'
 
 interface BreedListItem extends FlattenedBreed {
   image?: string;
-};
+}
 
 type BreedListProps = BreedListItem[]
 
-export default function BreedList({ breeds }: { breeds: BreedListProps }) {
+function BreedListContent({ breeds }: { breeds: BreedListProps }) {
   const searchParams = useSearchParams()
   const query = searchParams.get('q')?.toLowerCase() || ''
-
   const filteredBreeds = useMemo(() => {
     if (!query) return breeds
     return breeds.filter(({ breed, subBreed }) => {
@@ -31,7 +29,7 @@ export default function BreedList({ breeds }: { breeds: BreedListProps }) {
         {
           filteredBreeds.map(({ breed, subBreed, image }) => {
             const subBreedClass = subBreed ? 'ml-12 border-l border-global-divider' : ''
-            const breedPath = "/breed/" + (subBreed ? `${breed}/${subBreed}` : `${breed}`) 
+            const breedPath = "/breed/" + (subBreed ? `${breed}/${subBreed}` : `${breed}`)
             return (
               <li className={subBreedClass} key={`${breed}${subBreed}`}>
                 <Link className="flex items-center gap-4 px-5 py-2.5" href={breedPath}>
@@ -52,5 +50,13 @@ export default function BreedList({ breeds }: { breeds: BreedListProps }) {
         }
       </ul>
     </div>
+  )
+}
+
+export default function BreedList({ breeds }: { breeds: BreedListProps }) {
+  return (
+    <Suspense fallback={<p>loading...</p>}>
+      <BreedListContent breeds={breeds} />
+    </Suspense>
   )
 }
