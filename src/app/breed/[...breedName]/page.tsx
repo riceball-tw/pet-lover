@@ -4,9 +4,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 interface Query {
-  params: {
+  params: Promise<{
     breedName: string[]
-  }
+  }>
 }
 
 export async function generateStaticParams() {
