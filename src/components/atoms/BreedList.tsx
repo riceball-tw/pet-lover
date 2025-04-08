@@ -40,7 +40,7 @@ export default function BreedList({ breeds }: { breeds: BreedListProps }) {
                     height="60"
                     className="aspect-square bg-global-image-fallback rounded-full"
                     src={image || ""}
-                    alt={breed}
+                    alt={subBreed ? subBreed : breed}
                   />
                   <h2>{subBreed ? subBreed : breed}</h2>
                 </Link>
