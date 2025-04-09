@@ -37,7 +37,7 @@ function BreedListContent({ breeds }: { breeds: BreedListProps }) {
                     <Image
                       width="60"
                       height="60"
-                      className="aspect-square bg-global-image-fallback rounded-full"
+                      className="aspect-square bg-global-image-fallback object-cover rounded-full"
                       src={image}
                       alt={subBreed ? subBreed : breed}
                     />
