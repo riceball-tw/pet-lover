@@ -13,19 +13,30 @@ interface BreedImageListProps {
 export default function BreedImageList({ imageUrls, breedPath }: BreedImageListProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [selectedUrl, setSelectedUrl] = useState<string | null>(null)
-
   const imageUrlsWithoutSelected = imageUrls.filter(imageUrl => {
     return imageUrl !== selectedUrl 
   })
-  const carouselImages = imageUrlsWithoutSelected.map(url => {
-    return {
-      url,
-      alt: breedPath
-    }
-  })
+
+  const firstCarouselImage = selectedUrl
+    ? {
+        url: selectedUrl,
+        alt: breedPath
+      }
+    : null;
+
+  const carouselImages = [
+    ...(firstCarouselImage ? [firstCarouselImage] : []),
+    ...imageUrlsWithoutSelected.map(url => {
+      return {
+        url,
+        alt: breedPath
+      };
+    })
+  ];
 
   return (
     <>
+      
       <Dialog isDialogOpen={isDialogOpen} setIsDialogOpen={setIsDialogOpen}>
         <Carousel images={selectedUrl ? carouselImages: []} width={250} height={250} />
       </Dialog>
