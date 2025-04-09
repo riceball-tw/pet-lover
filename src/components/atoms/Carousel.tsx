@@ -34,7 +34,7 @@ export default function Carousel({images, width, height}: Props) {
   }, [images])
 
   return <div style={{width: width, height: height}} className="flex overflow-hidden">
-    <button className="fixed left-1 top-1/2 -translate-y-1/2 cursor-pointer z-10" onClick={showPrevImage} type="button">
+    <button arial-label="Previous Image" className="fixed left-1 top-1/2 -translate-y-1/2 cursor-pointer z-10" onClick={showPrevImage} type="button">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="chevron-left">
         <g id="arrow-down">
@@ -43,7 +43,7 @@ export default function Carousel({images, width, height}: Props) {
         </g>
       </svg>
     </button>
-    <button className="fixed right-1 top-1/2 -translate-y-1/2 cursor-pointer z-10" onClick={showNextImage} type="button">
+    <button arial-label="Next Image" className="fixed right-1 top-1/2 -translate-y-1/2 cursor-pointer z-10" onClick={showNextImage} type="button">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="chevron-right">
         <g id="arrow-down">
