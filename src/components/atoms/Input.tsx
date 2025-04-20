@@ -12,7 +12,7 @@ export default function Input({value, setValue}: Props) {
   }
 
   return (
-   <div className="flex items-center px-2.5 py-1 gap-2.5 bg-global-input-background focus-within:bg-global-input-background--focus transition-colors">
+   <div className="flex items-center px-2.5 py-1 gap-2.5 rounded-full bg-global-input-background focus-within:bg-global-input-background--focus transition-colors">
       <svg arial-label="Search Icon" className="shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="search">
       <path id="Path 5" d="M14.4121 14.4121L20 20" stroke="currentColor" strokeLinecap="round"/>

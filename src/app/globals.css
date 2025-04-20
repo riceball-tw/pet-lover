@@ -2,27 +2,26 @@
 
 :root {
   /* Global */
-  --global-foreground: #434343;
-  --global-background: #ffffff;
+  --global-foreground: #3B3B3B;
+  --global-background: #FFF9F4;
 
   /* GlobalHeader */
-  --global-header-background: #C4C4C4;
-  --global-header-foreground: #434343;
+  --global-header-background: #FFB84C;
+  --global-header-foreground: #141414;
 
   /* GlobalInput */
-  --global-input-background: #DDDDDD;
-  --global-input-text: #434343;
-  --global-input-placeholder: #BBBBBB;
+  --global-input-background: #FFF3DC;
+  --global-input-placeholder: #353232;
   --global-input-background--focus: #FFFFFF;
 
   /* Global Image */
-  --global-image-fallback: #C4C4C4;
+  --global-image-fallback: #FFD17C;
 
   /* Global Divider */
-  --global-divider: #C4C4C4;
+  --global-divider: #FFE1A8;
 
   /* Global Dialog */
-  --global-dialog-foreground: #ffffff;
+  --global-dialog-foreground: #FFFFFF;
 }
 
 @theme inline {
