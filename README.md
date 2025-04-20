@@ -1,4 +1,6 @@
-# Dog Lover - View different dog breeds online
+# [Dog Lover](https://pet-lover-ecru.vercel.app/breeds) - View different dog breeds online
+
+![Pet Lover Mockup](/src/public/pet-lover.jpg)
 
 > Search and explore various dog breeds
 
